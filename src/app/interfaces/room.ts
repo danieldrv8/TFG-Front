@@ -4,4 +4,5 @@ export interface Room {
     name: string;
     sites: Site[];
     temp: number;
+    image: string;
 }

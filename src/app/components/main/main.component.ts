@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Room } from '../../interfaces/room';
 import { Site } from '../../interfaces/site';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrl: './main.component.css'
+  styleUrls: ['./main.component.css']
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
 
-
-  public selectedRoom?: Room;
+  public selectedRoom?: string;
+  sitesShown: Site[] = [];
 
   rooms: Room[] = [
     {
@@ -21,7 +21,8 @@ export class MainComponent {
         { id: 4, occupied: false }
       ],
       temp: 20,
-      name: 'Sala 1'
+      name: 'Sala 1',
+      image: ''
     },
     {
       sites: [
@@ -31,20 +32,17 @@ export class MainComponent {
         { id: 4, occupied: true }
       ],
       temp: 25,
-      name: 'Sala 2'
+      name: 'Sala 2',
+      image: ''
     }
   ];
 
-  sitesShown: Site[] =  [];
-
   ngOnInit(): void {
-    this.selectedRoom = this.rooms[0];
     this.updateSitesShown();
   }
 
   updateSitesShown(): void {
-    this.sitesShown = this.selectedRoom?.sites || [];
+    this.sitesShown = this.rooms.find(room => room.name === this.selectedRoom)?.sites || [];
   }
-  
 
 }
