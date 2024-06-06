@@ -1,4 +1,4 @@
-<div class="container gradient-background">
+<div class="container">
   <div class="row">
     <div class="col-md-12">
       <h1>Ocupación y Temperatura</h1>
@@ -8,13 +8,13 @@
     <div class="row mb-2">
       <div class="col-md-4">
         <label style="font-size: large;" for="roomSelector">Seleccionar Habitación:</label>
-        <select id="roomSelector" class="form-control bg-dark" [(ngModel)]="selectedRoom" (change)="updateSitesShown()" style="color: white">
+        <select id="roomSelector" [ngClass]="{'scrollable': rooms.length > 10}" class="form-control bg-dark" [(ngModel)]="selectedRoom" (change)="updateSitesShown()" style="color: white">
           <option *ngFor="let room of rooms" [value]="room.name" style="color: white"> {{ room.name }} </option>
         </select>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3 tabla">
         <table class="table table-dark">
           <thead>
             <tr>
@@ -33,11 +33,12 @@
             </tr>
           </tbody>
         </table>
-      </div>
-      <div class="col-md-8 bg-primary">
-        <p class="lead text-white text-center">
-          Imagen de los asientos de la {{ selectedRoom }}
-        </p>
+      </div>      
+      <div class="col-md-2"></div>
+      <div class="col-md-7">
+        <ng-container *ngIf="imageShown != ''">
+          <img src="{{ imageShown }}" class="img-fluid" alt="Imagen de la habitación" height="600" width="800">
+        </ng-container>
       </div>
     </div>
   </div>

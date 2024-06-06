@@ -1,10 +1,18 @@
-.nav-bag {
-  background-image: linear-gradient(
-    to left top,
-    #d33a3a,
-    #9d2b37,
-    #68202d,
-    #36161d,
-    #000000
-  );
+ .nav-bag {
+  background-color: rgb(9, 178, 155);
+} 
+
+.container {
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: var(--background-components);
+  width: 80%;
+  max-width: 1200px;
+  height: 80%;
+  backdrop-filter: blur(10px);
+}
+
+.tabla {
+  height: 400px;
+  overflow-y: auto;
 }
