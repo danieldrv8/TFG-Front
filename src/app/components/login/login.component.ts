@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -8,18 +9,21 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private loginService: LoginService) { }
 
   username: string = '';
   password: string = '';
 
+
   login() {
-    // Simular la lógica de inicio de sesión.
-    if (this.username === 'usuario' && this.password === 'contraseña') {
-      alert('Inicio de sesión exitoso');
+    
+    if (this.loginService.login(this.username, this.password)) {
+      this.router.navigate(['/stats']);
     } else {
-      this.router.navigate(['/login']);
+      alert('Inicio de sesión fallido');
     }
+    
   }
+  
 
 }

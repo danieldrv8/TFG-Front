@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './stats.component.css'
 })
 export class StatsComponent {
+  
+  constructor(){
+    // window.location.reload();
+  }
+
+  ngOnInit(): void {
+    // window.location.reload();
+  }
 
 }

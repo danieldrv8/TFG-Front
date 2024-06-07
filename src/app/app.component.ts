@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tfg-font';
+
+  loggedIn: boolean = false;
+
+  ngOnInit() {
+    const token = localStorage.getItem('token');
+    if (token) {
+     this.loggedIn = true;
+    }
+  }
 }
