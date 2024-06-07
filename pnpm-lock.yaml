@@ -41,6 +41,9 @@ importers:
       bootstrap-icons:
         specifier: ^1.11.3
         version: 1.11.3
+      igniteui-angular-charts:
+        specifier: ^17.3.0
+        version: 17.3.0(@angular/common@17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6))(rxjs@7.8.1))(@angular/compiler@17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6)))(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6))(igniteui-angular-core@17.3.0(@angular/common@17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6))(rxjs@7.8.1))(@angular/compiler@17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6)))(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6)))
       rxjs:
         specifier: ~7.8.0
         version: 7.8.1
@@ -2402,6 +2405,21 @@ packages:
 
   ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
+
+  igniteui-angular-charts@17.3.0:
+    resolution: {integrity: sha512-zxsqzdtQkxWaAVgfGs2SlLzathgLVSijdAmVstnJNsKrga8vhx3w3RIJAUEUDtplV8aRO+F5YjHWb7OPWOa8KA==}
+    peerDependencies:
+      '@angular/common': ^17.0.0
+      '@angular/compiler': ^17.0.0
+      '@angular/core': ^17.0.0
+      igniteui-angular-core: 17.3.0
+
+  igniteui-angular-core@17.3.0:
+    resolution: {integrity: sha512-XUTwSWH+YZB0//YnYruzZm1aMqX2+chYjfjHEeo6DY7uCXQgcS2PDJvhBhYtSwmZcMiLiO4JPuZKJBojshCqgA==}
+    peerDependencies:
+      '@angular/common': ^17.0.0
+      '@angular/compiler': ^17.0.0
+      '@angular/core': ^17.0.0
 
   ignore-walk@6.0.5:
     resolution: {integrity: sha512-VuuG0wCnjhnylG1ABXT3dAuIpTNDs/G8jlpmwXY03fXoXy/8ZK8/T+hMzt8L4WnrLCJgdybqgPagnF/f97cg3A==}
@@ -6604,6 +6622,21 @@ snapshots:
       postcss: 8.4.35
 
   ieee754@1.2.1: {}
+
+  igniteui-angular-charts@17.3.0(@angular/common@17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6))(rxjs@7.8.1))(@angular/compiler@17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6)))(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6))(igniteui-angular-core@17.3.0(@angular/common@17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6))(rxjs@7.8.1))(@angular/compiler@17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6)))(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6))):
+    dependencies:
+      '@angular/common': 17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6))(rxjs@7.8.1)
+      '@angular/compiler': 17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6))
+      '@angular/core': 17.3.10(rxjs@7.8.1)(zone.js@0.14.6)
+      igniteui-angular-core: 17.3.0(@angular/common@17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6))(rxjs@7.8.1))(@angular/compiler@17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6)))(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6))
+      tslib: 2.6.2
+
+  igniteui-angular-core@17.3.0(@angular/common@17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6))(rxjs@7.8.1))(@angular/compiler@17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6)))(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6)):
+    dependencies:
+      '@angular/common': 17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6))(rxjs@7.8.1)
+      '@angular/compiler': 17.3.10(@angular/core@17.3.10(rxjs@7.8.1)(zone.js@0.14.6))
+      '@angular/core': 17.3.10(rxjs@7.8.1)(zone.js@0.14.6)
+      tslib: 2.6.2
 
   ignore-walk@6.0.5:
     dependencies:

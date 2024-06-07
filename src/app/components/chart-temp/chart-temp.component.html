@@ -1,0 +1,31 @@
+<div class="container vertical sample">
+    <div class="legend-title">
+        Temperatura Registrada
+    </div>
+    <div class="legend">
+        <igx-legend
+        name="Legend"
+        #legend
+        orientation="Horizontal">
+        </igx-legend>
+    </div>
+    <div class="container fill">
+        <igx-category-chart
+        name="chart"
+        #chart
+        chartType="Line"
+        isHorizontalZoomEnabled="false"
+        isVerticalZoomEnabled="false"
+        [dataSource]="tempData"
+        xMemberPath="month"
+        yMemberPath="temp"
+        [legend]="legend"
+        yAxisTitle="Temperatura (°C)"
+        yAxisTitleLeftMargin="10"
+        yAxisTitleRightMargin="5"
+        yAxisLabelLeftMargin="0"
+        computedPlotAreaMarginMode="Series">
+        </igx-category-chart>
+    </div>
+  </div>
+  

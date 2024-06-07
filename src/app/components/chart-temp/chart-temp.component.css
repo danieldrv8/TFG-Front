@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .legend-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .legend {
+    margin-bottom: 10px;
+  }
+  
+  .fill {
+    width: 100%;
+    height: 400px; /* Ajusta la altura según sea necesario */
+  }
+  
+  /* Ajusta los estilos del gráfico según sea necesario */
+  igx-category-chart {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Ajusta los estilos de la leyenda según sea necesario */
+  igx-legend {
+    font-size: 14px;
+  }
+  
+  /* Opcional: Estilos para mejorar la legibilidad de los ejes y etiquetas */
+  igx-axis {
+    font-size: 12px;
+  }
+  
+  /* Opcional: Estilos para mejorar la legibilidad de las etiquetas de los ejes */
+  igx-axis-label {
+    font-size: 12px;
+  }
+  
+  /* Opcional: Estilos para mejorar la legibilidad de las etiquetas del eje Y */
+  igx-category-axis-label {
+    white-space: nowrap;
+  }
+  
+  /* Opcional: Estilos para mejorar la legibilidad de las etiquetas del eje X */
+  igx-numeric-axis-label {
+    white-space: nowrap;
+  }
+  
