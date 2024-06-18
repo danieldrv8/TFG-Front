@@ -12,6 +12,7 @@ import { StatsComponent } from './components/stats/stats.component';
 import { IgxLegendModule, IgxDataChartCoreModule, IgxDataChartCategoryCoreModule, IgxDataChartCategoryModule, IgxDataChartInteractivityModule, IgxDataChartVerticalCategoryModule, IgxDataChartAnnotationModule, IgxCategoryChartModule } from 'igniteui-angular-charts';
 import { ChartTestComponent } from './components/chart-test/chart-test.component';
 import { ChartTempComponent } from './components/chart-temp/chart-temp.component';
+import { InfluxDataComponent } from './components/influx-data/influx-data.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ChartTempComponent } from './components/chart-temp/chart-temp.component
     LoginComponent,
     StatsComponent,
     ChartTestComponent,
-    ChartTempComponent
+    ChartTempComponent,
+    InfluxDataComponent
   ],
   imports: [
     BrowserModule,

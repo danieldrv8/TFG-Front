@@ -9,7 +9,10 @@
         <a class="nav-link" routerLink="/main">Ocupación y Temperatura</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contactanos</a>
+        <a class="nav-link" routerLink="/">Contactanos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/influx">InfluxDB</a>
       </li>
       <li class="nav-item"  *ngIf="checkLogin();else stats">
         <a class="nav-link" routerLink="/stats">Estadísticas</a>
