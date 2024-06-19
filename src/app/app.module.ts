@@ -13,6 +13,7 @@ import { IgxLegendModule, IgxDataChartCoreModule, IgxDataChartCategoryCoreModule
 import { ChartTestComponent } from './components/chart-test/chart-test.component';
 import { ChartTempComponent } from './components/chart-temp/chart-temp.component';
 import { InfluxDataComponent } from './components/influx-data/influx-data.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { InfluxDataComponent } from './components/influx-data/influx-data.compon
     IgxDataChartInteractivityModule,
     IgxDataChartVerticalCategoryModule,
     IgxDataChartAnnotationModule,
-    IgxCategoryChartModule
+    IgxCategoryChartModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
