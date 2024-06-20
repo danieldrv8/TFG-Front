@@ -1,45 +1,18 @@
-import { AfterViewInit, Component, ViewChild, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { HighestGrossingMoviesItem, HighestGrossingMovies } from './HighestGrossingMovies';
-import { IgxLegendComponent, IgxDataChartComponent, IgxCategoryYAxisComponent, IgxNumericXAxisComponent, IgxCategoryHighlightLayerComponent, IgxBarSeriesComponent, IgxDataToolTipLayerComponent } from 'igniteui-angular-charts';
+import { Component } from '@angular/core';
+
 @Component({
   selector: 'app-chart-test',
   templateUrl: './chart-test.component.html',
-  styleUrl: './chart-test.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./chart-test.component.css']
 })
-export class ChartTestComponent implements AfterViewInit {
+export class ChartTestComponent {
+  public attendanceData: any[];
 
-  @ViewChild("legend", { static: true } )
-    private legend: IgxLegendComponent | undefined
-    @ViewChild("chart", { static: true } )
-    private chart: IgxDataChartComponent | undefined
-    @ViewChild("yAxis", { static: true } )
-    private yAxis: IgxCategoryYAxisComponent | undefined
-    @ViewChild("xAxis", { static: true } )
-    private xAxis: IgxNumericXAxisComponent | undefined
-    @ViewChild("categoryHighlightLayer", { static: true } )
-    private categoryHighlightLayer: IgxCategoryHighlightLayerComponent | undefined
-    @ViewChild("barSeries1", { static: true } )
-    private barSeries1: IgxBarSeriesComponent | undefined
-    @ViewChild("barSeries2", { static: true } ) 
-    private barSeries2: IgxBarSeriesComponent | undefined
-    @ViewChild("tooltips", { static: true } )
-    private tooltips: IgxDataToolTipLayerComponent | undefined
-    private _highestGrossingMovies: HighestGrossingMovies | undefined;
-    public get highestGrossingMovies(): HighestGrossingMovies {
-        if (this._highestGrossingMovies == null)
-        {
-            this._highestGrossingMovies = new HighestGrossingMovies();
-        }
-        return this._highestGrossingMovies;
-    }
-
-    public constructor(private _detector: ChangeDetectorRef)
-    {
-    }
-
-    public ngAfterViewInit(): void
-    {
-    }
-    
+  constructor() {
+    this.attendanceData = [
+      { sala: 'Sala 1', totalAttendance: 5.2, highestAttendance: 1.5 },
+      { sala: 'Sala 2', totalAttendance: 4.8, highestAttendance: 1.3 },
+      // Agrega más datos según sea necesario
+    ];
+  }
 }

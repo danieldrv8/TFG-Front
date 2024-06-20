@@ -1,6 +1,6 @@
 <div class="container vertical sample">
     <div class="legend-title">
-        Highest Grossing Movie Franchises
+        Asistencia a Salas de Cine
     </div>
     <div class="legend">
         <igx-legend
@@ -17,10 +17,10 @@
             <igx-category-y-axis
             name="yAxis"
             #yAxis
-            label="franchise"
+            label="sala"
             useEnhancedIntervalManagement="true"
             enhancedIntervalPreferMoreCategoryLabels="true"
-            [dataSource]="highestGrossingMovies"
+            [dataSource]="attendanceData"
             isInverted="true"
             gap="0.5"
             overlap="-0.1">
@@ -28,7 +28,7 @@
             <igx-numeric-x-axis
             name="xAxis"
             #xAxis
-            title="Billions of U.S. Dollars">
+            title="Millones de Asistentes">
             </igx-numeric-x-axis>
             <igx-category-highlight-layer
             name="CategoryHighlightLayer"
@@ -39,9 +39,9 @@
             #barSeries1
             [xAxis]="xAxis"
             [yAxis]="yAxis"
-            title="Total Revenue of Franchise"
-            valueMemberPath="totalRevenue"
-            [dataSource]="highestGrossingMovies"
+            title="Asistencia Total"
+            valueMemberPath="totalAttendance"
+            [dataSource]="attendanceData"
             showDefaultTooltip="true"
             isTransitionInEnabled="true"
             isHighlightingEnabled="true">
@@ -51,9 +51,9 @@
             #barSeries2
             [xAxis]="xAxis"
             [yAxis]="yAxis"
-            title="Highest Grossing Movie in Series"
-            valueMemberPath="highestGrossing"
-            [dataSource]="highestGrossingMovies"
+            title="Mayor Asistencia en una Sala"
+            valueMemberPath="highestAttendance"
+            [dataSource]="attendanceData"
             showDefaultTooltip="true"
             isTransitionInEnabled="true"
             isHighlightingEnabled="true">
@@ -64,5 +64,4 @@
             </igx-data-tool-tip-layer>
         </igx-data-chart>
     </div>
-  </div>
-  
+</div>
