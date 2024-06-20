@@ -23,6 +23,8 @@ const long interval = 200;
 
 // LDR
 const int ldrPin = A0;
+const int numReadings = 10; // Número de lecturas para promediar
+
 
 //LCD
 const int rs = 8, en = 9, d4 = 4, d5 = 5, d6 = 6, d7 = 7;
@@ -37,6 +39,11 @@ int temp = 0;
 #define DHTTYPE DHT11
 
 DHT dht(DHT11_PIN, DHTTYPE); // Initialize DHT sensor for normal 16mhz Arduino
+
+int readings[numReadings]; // Matriz para almacenar las lecturas
+int readIndex = 0; // Índice de la lectura actual
+int total = 0; // Total de las lecturas
+int average = 0; // Promedio de las lecturas
 
 void setup()
 {
@@ -53,6 +60,10 @@ void setup()
 
   // LDR
   pinMode(ldrPin, INPUT);
+    // Inicializar la matriz de lecturas con 0
+  for (int thisReading = 0; thisReading < numReadings; thisReading++) {
+    readings[thisReading] = 0;
+  }
 
   // Comenzamos el sensor DHT
   dht.begin();
@@ -71,12 +82,23 @@ void loop()
   // Encender la luz roja si se detecta un objeto a menos de 6 cm, de lo contrario, encender la luz verde
   digitalWrite(redLedPin, distance < 6);
   digitalWrite(greenLedPin, distance >= 6);
-
+  
   // Controlar la intensidad del LED blanco en función de la luz ambiente
-  int lightLevel = analogRead(ldrPin); // Leer el valor del sensor de luz
-  int brightness = map(lightLevel, 0, 1023, 255, 0); // Mapear el valor leído a un rango de brillo (0-255)
+  total = total - readings[readIndex]; // Restar la lectura más antigua del total
+  readings[readIndex] = analogRead(ldrPin); // Leer el valor del sensor de luz
+  total = total + readings[readIndex]; // Añadir la nueva lectura al total
+  readIndex = (readIndex + 1) % numReadings; // Avanzar al siguiente índice de la lectura
+  average = total / numReadings; // Calcular el promedio
+
+  int brightness = map(average, 0, 1023, 255, 0); // Mapear el valor promedio a un rango de brillo (0-255)
+  brightness = constrain(brightness, 0, 255); // Asegurarse de que el brillo esté en el rango correcto
   analogWrite(whiteLedPin, brightness); // Ajustar la intensidad del LED blanco
 
+  // Debug: imprimir valores de luz y brillo
+  Serial.print("Nivel de luz promedio: ");
+  Serial.print(average);
+  Serial.print(" -> Brillo: ");
+  Serial.println(brightness);
 
   // Leemos la temperatura en grados centígrados (por defecto)
   float t = dht.readTemperature();
